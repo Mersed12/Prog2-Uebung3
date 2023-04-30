@@ -14,7 +14,7 @@ import java.util.List;
 
 @DatabaseTable(tableName = "watchlistMovie")
 public class WatchlistMovieEntity {
-    @DatabaseField(columnName = "id", id = true, generatedId = true)
+    @DatabaseField(columnName = "id", generatedId = true)
     long id;
 
     @DatabaseField(columnName = "api_id")
@@ -40,6 +40,10 @@ public class WatchlistMovieEntity {
 
     @DatabaseField(columnName = "rating")
     double rating;
+
+    WatchlistMovieEntity () {
+
+    }
 
     public static String genresToString(List<Genre> genres) {
         if (genres == null || genres.isEmpty()) {
