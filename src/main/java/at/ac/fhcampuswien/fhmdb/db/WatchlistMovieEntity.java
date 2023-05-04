@@ -14,6 +14,7 @@ import java.util.List;
 
 @DatabaseTable(tableName = "watchlistMovie")
 public class WatchlistMovieEntity {
+    // Datenbankfelder für WatchlistMovieEntity
     @DatabaseField(columnName = "id", generatedId = true)
     long id;
 
@@ -41,10 +42,12 @@ public class WatchlistMovieEntity {
     @DatabaseField(columnName = "rating")
     double rating;
 
-    WatchlistMovieEntity () {
+    // Standardkonstruktor für WatchlistMovieEntity
+    WatchlistMovieEntity() {
 
     }
 
+    // Methode, um eine Liste von Genre-Objekten in einen durch Kommas getrennten String umzuwandeln
     public static String genresToString(List<Genre> genres) {
         if (genres == null || genres.isEmpty()) {
             return "";
@@ -59,5 +62,3 @@ public class WatchlistMovieEntity {
         return sb.toString();
     }
 }
-
-
